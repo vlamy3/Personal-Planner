@@ -1,0 +1,475 @@
+/* ===================================
+   Victoria's Daily Flow - Planner Styles
+   Deep Sage with Morning Light Design
+   Optimized for Apple Devices
+   =================================== */
+
+:root {
+    /* Color Palette */
+    --deep-sage: #5a6f5a;
+    --sage-light: #8aa387;
+    --sage-dark: #3d4f3d;
+    --morning-light: #fef9e7;
+    --pastel-pink: #fce4ec;
+    --pastel-lavender: #e8eaf6;
+    --pastel-mint: #e0f2f1;
+    --pastel-peach: #fff3e0;
+    --text-dark: #2c3e2c;
+    --text-light: #6d7d6d;
+    --border-soft: #d4ddd4;
+    
+    /* Typography */
+    --font-main: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    --font-decorative: 'Georgia', 'Times New Roman', serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-main);
+    background: #f5f5f0;
+    color: var(--text-dark);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* ===================================
+   Page Structure - Letter Size Portrait
+   =================================== */
+
+.page {
+    width: 8.5in;
+    height: 11in;
+    margin: 20px auto;
+    background: white;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+    page-break-after: always;
+}
+
+/* ===================================
+   Cover Page Design
+   Deep Sage + Linen Texture + Morning Light Fade
+   =================================== */
+
+.cover-page {
+    background: linear-gradient(135deg, var(--deep-sage) 0%, var(--sage-dark) 50%, var(--deep-sage) 100%);
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Linen Texture Overlay */
+.cover-page::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+        repeating-linear-gradient(0deg, rgba(255,255,255,0.03) 0px, transparent 1px, transparent 2px, rgba(255,255,255,0.03) 3px),
+        repeating-linear-gradient(90deg, rgba(255,255,255,0.03) 0px, transparent 1px, transparent 2px, rgba(255,255,255,0.03) 3px);
+    opacity: 0.6;
+}
+
+/* Morning Light Fade */
+.cover-page::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 40%;
+    background: linear-gradient(180deg, var(--morning-light) 0%, transparent 100%);
+    opacity: 0.25;
+}
+
+.cover-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    color: white;
+    padding: 60px;
+}
+
+.cover-title h1 {
+    font-family: var(--font-decorative);
+    font-size: 4.5em;
+    font-weight: 300;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+    line-height: 1.2;
+}
+
+.cover-subtitle {
+    font-size: 1.4em;
+    font-weight: 300;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    opacity: 0.95;
+    margin-bottom: 40px;
+}
+
+.cover-leaf {
+    font-size: 4em;
+    margin: 40px 0;
+    animation: leafFloat 3s ease-in-out infinite;
+}
+
+@keyframes leafFloat {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+}
+
+.cover-quote {
+    margin-top: 60px;
+    font-family: var(--font-decorative);
+    font-size: 1.1em;
+    font-style: italic;
+    line-height: 1.8;
+    opacity: 0.95;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.quote-ref {
+    display: block;
+    margin-top: 15px;
+    font-size: 0.9em;
+    font-style: normal;
+    opacity: 0.85;
+}
+
+/* ===================================
+   Daily Page Design
+   Soft Pastel Tones + Floral Accents
+   =================================== */
+
+.daily-page {
+    background: linear-gradient(to bottom, var(--pastel-lavender) 0%, white 15%);
+    padding: 40px;
+}
+
+/* Gentle Linen Shading */
+.daily-page::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+        repeating-linear-gradient(0deg, rgba(90,111,90,0.015) 0px, transparent 1px, transparent 2px, rgba(90,111,90,0.015) 3px),
+        repeating-linear-gradient(90deg, rgba(90,111,90,0.015) 0px, transparent 1px, transparent 2px, rgba(90,111,90,0.015) 3px);
+    pointer-events: none;
+}
+
+/* Floral Accent Corners */
+.daily-page::after {
+    content: '🌸';
+    position: absolute;
+    top: 20px;
+    right: 40px;
+    font-size: 1.5em;
+    opacity: 0.3;
+}
+
+.page-header {
+    margin-bottom: 30px;
+    position: relative;
+    z-index: 1;
+}
+
+.date-section {
+    margin-bottom: 20px;
+}
+
+.day-name {
+    font-family: var(--font-decorative);
+    font-size: 2.2em;
+    color: var(--deep-sage);
+    font-weight: 400;
+    margin-bottom: 5px;
+}
+
+.date {
+    font-size: 1.1em;
+    color: var(--text-light);
+    font-weight: 300;
+}
+
+.daily-quote {
+    background: linear-gradient(135deg, var(--pastel-mint) 0%, var(--pastel-peach) 100%);
+    padding: 20px 25px;
+    border-radius: 12px;
+    border-left: 4px solid var(--sage-light);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.quote-text {
+    font-family: var(--font-decorative);
+    font-style: italic;
+    font-size: 1.05em;
+    color: var(--text-dark);
+    line-height: 1.6;
+    margin-bottom: 8px;
+}
+
+.quote-reference {
+    font-size: 0.9em;
+    color: var(--text-light);
+    text-align: right;
+}
+
+/* ===================================
+   Daily Layout - Morning | Afternoon | Night
+   30-60 min Flexible Blocks
+   =================================== */
+
+.daily-layout {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 30px;
+    position: relative;
+    z-index: 1;
+}
+
+.time-section {
+    flex: 1;
+    min-height: 500px;
+}
+
+.section-header {
+    background: var(--deep-sage);
+    color: white;
+    padding: 12px 15px;
+    border-radius: 8px 8px 0 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.section-header h3 {
+    font-size: 1.1em;
+    font-weight: 500;
+}
+
+.time-range {
+    font-size: 0.85em;
+    opacity: 0.9;
+}
+
+.time-blocks {
+    background: white;
+    border: 2px solid var(--border-soft);
+    border-top: none;
+    border-radius: 0 0 8px 8px;
+    padding: 10px;
+}
+
+.time-block {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 8px;
+    min-height: 60px;
+}
+
+.time-block .time {
+    font-size: 0.85em;
+    color: var(--text-light);
+    font-weight: 500;
+    min-width: 45px;
+    padding-top: 3px;
+}
+
+.block-content {
+    flex: 1;
+    border-bottom: 1px solid var(--border-soft);
+    position: relative;
+}
+
+/* Time block accents for each section */
+.morning .time-blocks {
+    background: linear-gradient(to bottom, var(--pastel-peach) 0%, white 20%);
+}
+
+.afternoon .time-blocks {
+    background: linear-gradient(to bottom, var(--pastel-lavender) 0%, white 20%);
+}
+
+.night .time-blocks {
+    background: linear-gradient(to bottom, var(--pastel-pink) 0%, white 20%);
+}
+
+/* ===================================
+   Notes Page
+   =================================== */
+
+.notes-page {
+    background: linear-gradient(to bottom, var(--pastel-mint) 0%, white 15%);
+    padding: 40px;
+}
+
+.notes-page::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+        repeating-linear-gradient(0deg, rgba(90,111,90,0.015) 0px, transparent 1px, transparent 2px, rgba(90,111,90,0.015) 3px),
+        repeating-linear-gradient(90deg, rgba(90,111,90,0.015) 0px, transparent 1px, transparent 2px, rgba(90,111,90,0.015) 3px);
+    pointer-events: none;
+}
+
+.notes-page .page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 3px solid var(--deep-sage);
+    padding-bottom: 15px;
+    position: relative;
+    z-index: 1;
+}
+
+.notes-page h2 {
+    font-family: var(--font-decorative);
+    font-size: 2em;
+    color: var(--deep-sage);
+}
+
+.floral-accent {
+    font-size: 2em;
+    opacity: 0.4;
+}
+
+.notes-content {
+    margin-top: 30px;
+    position: relative;
+    z-index: 1;
+}
+
+.notes-section {
+    margin-bottom: 35px;
+}
+
+.notes-section h3 {
+    color: var(--deep-sage);
+    font-size: 1.3em;
+    margin-bottom: 15px;
+    font-weight: 500;
+}
+
+.notes-lines {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid var(--border-soft);
+}
+
+.note-line {
+    height: 40px;
+    border-bottom: 1px solid var(--border-soft);
+    margin-bottom: 10px;
+}
+
+.note-line:last-child {
+    margin-bottom: 0;
+}
+
+/* ===================================
+   Footer - Consistent Across Pages
+   =================================== */
+
+.page-footer {
+    position: absolute;
+    bottom: 30px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    z-index: 1;
+}
+
+.page-footer p {
+    font-size: 0.9em;
+    color: var(--text-light);
+    font-style: italic;
+    letter-spacing: 0.5px;
+}
+
+/* ===================================
+   Print Optimization
+   =================================== */
+
+@media print {
+    body {
+        background: white;
+    }
+    
+    .page {
+        margin: 0;
+        box-shadow: none;
+        page-break-after: always;
+    }
+    
+    @page {
+        size: letter portrait;
+        margin: 0;
+    }
+}
+
+/* ===================================
+   Apple Device Optimization
+   =================================== */
+
+@media screen and (max-width: 768px) {
+    .page {
+        width: 100%;
+        height: auto;
+        min-height: 100vh;
+        margin: 0;
+        box-shadow: none;
+    }
+    
+    .daily-layout {
+        flex-direction: column;
+    }
+    
+    .time-section {
+        min-height: auto;
+    }
+    
+    .cover-title h1 {
+        font-size: 3em;
+    }
+    
+    .daily-page {
+        padding: 20px;
+    }
+}
+
+/* Smooth scrolling for Apple devices */
+@supports (-webkit-overflow-scrolling: touch) {
+    html {
+        -webkit-overflow-scrolling: touch;
+    }
+}
+
+/* Dark mode consideration for iOS */
+@media (prefers-color-scheme: dark) {
+    /* Keep the planner in light mode for printing purposes */
+    body {
+        background: #f5f5f0;
+    }
+}

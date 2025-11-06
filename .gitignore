@@ -1,0 +1,21 @@
+# System Files
+.DS_Store
+Thumbs.db
+
+# Temporary Files
+*.tmp
+*.swp
+*~
+
+# Editor Directories
+.vscode/
+.idea/
+*.sublime-*
+
+# Logs
+*.log
+
+# Build artifacts
+dist/
+build/
+node_modules/

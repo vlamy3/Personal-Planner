@@ -1,7 +1,7 @@
 /* ===================================
-   Victoria's Daily Flow - Planner Styles
-   Deep Sage with Morning Light Design
-   Optimized for Apple Devices
+    Victoria's Daily Flow - Planner Styles
+    Deep Sage with Morning Light Design
+    Optimized for Apple Devices
    =================================== */
 
 :root {
@@ -39,7 +39,7 @@ body {
 }
 
 /* ===================================
-   Page Structure - Letter Size Portrait
+Page Structure - Letter Size Portrait
    =================================== */
 
 .page {
@@ -54,8 +54,8 @@ body {
 }
 
 /* ===================================
-   Cover Page Design
-   Deep Sage + Linen Texture + Morning Light Fade
+    Cover Page Design
+    Deep Sage + Linen Texture + Morning Light Fade
    =================================== */
 
 .cover-page {
@@ -151,8 +151,8 @@ body {
 }
 
 /* ===================================
-   Daily Page Design
-   Soft Pastel Tones + Floral Accents
+    Daily Page Design
+    Soft Pastel Tones + Floral Accents
    =================================== */
 
 .daily-page {
@@ -232,8 +232,8 @@ body {
 }
 
 /* ===================================
-   Daily Layout - Morning | Afternoon | Night
-   30-60 min Flexible Blocks
+    Daily Layout - Morning | Afternoon | Night
+    30-60 min Flexible Blocks
    =================================== */
 
 .daily-layout {
@@ -312,7 +312,7 @@ body {
 }
 
 /* ===================================
-   Notes Page
+    Notes Page
    =================================== */
 
 .notes-page {
@@ -389,7 +389,7 @@ body {
 }
 
 /* ===================================
-   Footer - Consistent Across Pages
+    Footer - Consistent Across Pages
    =================================== */
 
 .page-footer {
@@ -409,7 +409,7 @@ body {
 }
 
 /* ===================================
-   Print Optimization
+    Print Optimization
    =================================== */
 
 @media print {
@@ -430,7 +430,7 @@ body {
 }
 
 /* ===================================
-   Apple Device Optimization
+    Apple Device Optimization
    =================================== */
 
 @media screen and (max-width: 768px) {

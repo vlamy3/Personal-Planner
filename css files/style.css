@@ -70,3 +70,19 @@ body {
     padding: 1em 1.5em;
 
 }
+
+header {
+    text-align: center;
+    margin-bottom: 1em;
+}
+
+.quote {
+    font-size: 0.9em;
+    color: #5a6653;
+    margin-top: -5px;
+}
+
+.motivation {
+    font-size: 0.85em;
+    color: #7a8b76;
+}

@@ -122,3 +122,28 @@ footer {
     .cover-content h1 { font-size: 2em; }
     textarea { height: 80px; }
 }
+/* 🔆 Smooth Fade Transition */
+.page {
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.8s ease-in-out;
+}
+
+.page.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* Optional subtle zoom for elegance */
+#planner.active {
+    animation: softZoom 0.8s ease forwards;
+}
+
+@keyframes softZoom {
+    from {
+    transform: scale(0.98);
+}
+    to {
+    transform: scale(1);
+    }
+}

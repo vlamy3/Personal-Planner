@@ -1,47 +1,15 @@
-// --- Page Switch ---
-const openBtn = document.getElementById("openPlanner");
-const backBtn = document.getElementById("backToCover");
-const coverPage = document.getElementById("cover");
-const plannerPage = document.getElementById("planner");
-
-// --- Quotes & Verses ---
-const verses = [
-    { verse: "“Trust in Jehovah with all your heart.” — Proverbs 3:5", motivation: "Flow with faith and clarity 🌿" },
-    { verse: "“Let your light shine before men.” — Matthew 5:16", motivation: "Your creativity inspires others ✨" },
-    { verse: "“Do not be anxious about anything.” — Philippians 4:6", motivation: "Calm mind, focused heart 💭" },
-    { verse: "“The joy of Jehovah is your stronghold.” — Nehemiah 8:10", motivation: "Find strength in gratitude 🌞" },
-    { verse: "“Love never fails.” — 1 Corinthians 13:8", motivation: "Lead with love, always 💚" }
-];
-
-function showRandomQuote() {
-  const random = verses[Math.floor(Math.random() * verses.length)];
-    document.querySelector(".quote").textContent = random.verse;
-    document.querySelector(".motivation").textContent = random.motivation;
-}
-
-// --- Page Switch ---
-openBtn.addEventListener("click", () => {
-    coverPage.style.opacity = "0";
-    setTimeout(() => {
-    coverPage.classList.remove("active");
-    plannerPage.classList.add("active");
-    showRandomQuote();
-    }, 600);
-});
-
-backBtn.addEventListener("click", () => {
-    plannerPage.style.opacity = "0";
-    setTimeout(() => {
-    plannerPage.classList.remove("active");
-    coverPage.classList.add("active");
-    coverPage.style.opacity = "1";
-    }, 600);
-});
-
 // --- Pomodoro Timer ---
-let time = 25 * 60;
+let focusTime = 25 * 60;
+let breakTime = 5 * 60;
+let time = focusTime;
 let timerInterval;
+let isFocus = true;
+
 const timerDisplay = document.getElementById("timer");
+const modeDisplay = document.getElementById("mode");
+const focusSelect = document.getElementById("focus");
+const breakSelect = document.getElementById("break");
+const pomodoroBox = document.querySelector(".pomodoro");
 
 function updateTimer() {
     const minutes = Math.floor(time / 60);
@@ -49,18 +17,37 @@ function updateTimer() {
     timerDisplay.textContent = `${minutes}:${seconds < 10 ? "0" : ""}${seconds}`;
 }
 
+function switchMode() {
+    isFocus = !isFocus;
+    if (isFocus) {
+    time = focusTime;
+    modeDisplay.textContent = "Focus";
+    pomodoroBox.style.backgroundColor = "rgba(255,255,255,0.85)";
+    } else {
+        time = breakTime;
+        modeDisplay.textContent = "Break 🌸";
+        pomodoroBox.style.backgroundColor = "rgba(232,246,234,0.9)";
+    }
+    updateTimer();
+}
+
 document.getElementById("start").addEventListener("click", () => {
     if (!timerInterval) {
-    timerInterval = setInterval(() => {
+        timerInterval = setInterval(() => {
         time--;
         updateTimer();
         if (time <= 0) {
         clearInterval(timerInterval);
         timerInterval = null;
-        alert("Pomodoro complete! Take a mindful break 🌸");
-    }
+        if (isFocus) {
+            alert("Focus complete! Time for a peaceful break 🌿");
+        } else {
+            alert("Break complete! Let’s flow back into focus 💫");
+        }
+        switchMode();
+        }
     }, 1000);
-    }   
+    }
 });
 
 document.getElementById("pause").addEventListener("click", () => {
@@ -71,8 +58,28 @@ document.getElementById("pause").addEventListener("click", () => {
 document.getElementById("reset").addEventListener("click", () => {
     clearInterval(timerInterval);
     timerInterval = null;
-    time = 25 * 60;
+    isFocus = true;
+    time = focusTime;
+    modeDisplay.textContent = "Focus";
+    pomodoroBox.style.backgroundColor = "rgba(255,255,255,0.85)";
     updateTimer();
+});
+
+// Update duration selections
+focusSelect.addEventListener("change", (e) => {
+  focusTime = parseInt(e.target.value) * 60;
+    if (isFocus) {
+    time = focusTime;
+    updateTimer();
+}
+});
+
+breakSelect.addEventListener("change", (e) => {
+  breakTime = parseInt(e.target.value) * 60;
+    if (!isFocus) {
+    time = breakTime;
+    updateTimer();
+    }
 });
 
 updateTimer();

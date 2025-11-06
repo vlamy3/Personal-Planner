@@ -227,3 +227,59 @@ audio {
 #backToCover:hover {
     background: #9da48e;
 }
+/* Pomodoro Timer */
+.pomodoro {
+    background: rgba(255,255,255,0.85);
+    border-radius: 12px;
+    padding: 1em;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    width: 280px;
+    text-align: center;
+    margin: 0.5em;
+    transition: background-color 0.5s ease;
+    }
+
+#mode {
+    font-weight: 600;
+    font-size: 1.1em;
+    color: #62745f;
+    margin-bottom: 0.3em;
+}
+
+#timer {
+    font-size: 2em;
+    color: #4a5943;
+    margin: 0.4em 0;
+    font-weight: bold;
+}
+
+.pomodoro-buttons button {
+    background-color: #a3b18a;
+    color: #fff;
+    border: none;
+    margin: 0.3em;
+    padding: 0.5em 1em;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.pomodoro-buttons button:hover {
+    background-color: #879775;
+}
+
+.pomodoro-options {
+    margin-top: 0.8em;
+    font-size: 0.9em;
+    color: #5a6653;
+}
+
+select {
+    border: 1px solid #a3b18a;
+    border-radius: 6px;
+    padding: 0.2em 0.4em;
+    background: #f8f8f4;
+    color: #4a5943;
+    font-family: inherit;
+    margin: 0.3em;
+}

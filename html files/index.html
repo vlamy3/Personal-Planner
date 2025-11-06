@@ -52,11 +52,28 @@
 
     <div class="pomodoro">
         <h4>⏰ Pomodoro Timer</h4>
-        <div id="timer">25:00</div>
-        <div class="pomodoro-buttons">
-            <button id="start">Start</button>
-            <button id="pause">Pause</button>
-            <button id="reset">Reset</button>
+        <div id="mode">Focus</div>
+            <div id="timer">25:00</div>
+
+    <div class="pomodoro-buttons">
+        <button id="start">Start</button>
+        <button id="pause">Pause</button>
+        <button id="reset">Reset</button>
+    </div>
+
+    <div class="pomodoro-options">
+        <label for="focus">Focus:</label>
+        <select id="focus">
+            <option value="25">25 min</option>
+            <option value="50">50 min</option>
+        </select>
+
+        <label for="break">Break:</label>
+        <select id="break">
+            <option value="5">5 min</option>
+            <option value="10">10 min</option>
+        </select>
+            </div>
         </div>
     </div>
     </section>

@@ -23,3 +23,27 @@ body {
     align-items: center; text-align: center;
     color: #2d3a2a;
 }
+.cover-content h1 {
+    font-size: 2.8em;
+    margin-bottom: 0.3em;
+}
+
+.cover-content p {
+    font-style: italic;
+}
+
+#openPlanner {
+    background-color: #a3b18a;
+    color: fff;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-size: 1em;
+    cursor: pointer;
+    margin-top: 1.5em;
+    transition: 0.3s;
+}
+
+#openPlanner:hover {
+    background-color: #879775;
+}

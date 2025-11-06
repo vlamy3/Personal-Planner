@@ -1,0 +1,25 @@
+/* Base Styling */
+body {
+    margin: 0;
+    font-family: "avenir", "Helvetica Neue", sans serif;
+    background-color: #fdfcf9;
+    color: #333;
+    transition: background 0.6s ease;
+}
+
+/* Cover Page */
+
+#cover {
+    background: linear-gradient(
+        rgba(255, 255, 255, 0.2),
+        rgba(255, 255, 255, 0.6)
+    ),
+    url('https://www.transparenttextures.com/patterns/linen.png'),
+    linear-gradient(120deg, #a3b18a, #dce1d1);
+    background-blend-mode: overlay;
+    height: 100vh;
+    display: flex;
+    justify-content: center; 
+    align-items: center; text-align: center;
+    color: #2d3a2a;
+}

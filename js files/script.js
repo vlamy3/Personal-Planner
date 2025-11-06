@@ -1,9 +1,8 @@
 // --- Page Switch ---
-document.getElementById("openPlanner").addEventListener("click", () => {
-    document.getElementById("cover").classList.remove("active");
-    document.getElementById("planner").classList.add("active");
-    showRandomQuote();
-});
+const openBtn = document.getElementById("openPlanner");
+const backBtn = document.getElementById("backToCover");
+const coverPage = document.getElementById("cover");
+const plannerPage = document.getElementById("planner");
 
 // --- Quotes & Verses ---
 const verses = [
@@ -15,22 +14,65 @@ const verses = [
 ];
 
 function showRandomQuote() {
-    const today = new Date().getDate();
-    const quote = verses[today % verses.length];
-
-    document.querySelector(".quote").textContent = quote.verse;
-    document.querySelector(".motivation").textContent = quote.motivation;
+  const random = verses[Math.floor(Math.random() * verses.length)];
+    document.querySelector(".quote").textContent = random.verse;
+    document.querySelector(".motivation").textContent = random.motivation;
 }
 
+// --- Page Switch ---
 openBtn.addEventListener("click", () => {
-  // Start fade transition
     coverPage.style.opacity = "0";
-
-  // Wait for fade-out to finish, then switch pages
     setTimeout(() => {
     coverPage.classList.remove("active");
     plannerPage.classList.add("active");
     showRandomQuote();
-  }, 600); // matches the CSS transition duration
+    }, 600);
 });
-document.body.style.backgroundColor = "#faf8f5";
+
+backBtn.addEventListener("click", () => {
+    plannerPage.style.opacity = "0";
+    setTimeout(() => {
+    plannerPage.classList.remove("active");
+    coverPage.classList.add("active");
+    coverPage.style.opacity = "1";
+    }, 600);
+});
+
+// --- Pomodoro Timer ---
+let time = 25 * 60;
+let timerInterval;
+const timerDisplay = document.getElementById("timer");
+
+function updateTimer() {
+    const minutes = Math.floor(time / 60);
+    const seconds = time % 60;
+    timerDisplay.textContent = `${minutes}:${seconds < 10 ? "0" : ""}${seconds}`;
+}
+
+document.getElementById("start").addEventListener("click", () => {
+    if (!timerInterval) {
+    timerInterval = setInterval(() => {
+        time--;
+        updateTimer();
+        if (time <= 0) {
+        clearInterval(timerInterval);
+        timerInterval = null;
+        alert("Pomodoro complete! Take a mindful break 🌸");
+    }
+    }, 1000);
+    }   
+});
+
+document.getElementById("pause").addEventListener("click", () => {
+    clearInterval(timerInterval);
+    timerInterval = null;
+});
+
+document.getElementById("reset").addEventListener("click", () => {
+    clearInterval(timerInterval);
+    timerInterval = null;
+    time = 25 * 60;
+    updateTimer();
+});
+
+updateTimer();

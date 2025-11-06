@@ -39,8 +39,30 @@
             <textarea placeholder="Reflection, notes, unwind..."></textarea>
         </div>
     </main>
+
+    <!-- Music Player + Pomodoro Timer -->
+    <section class="tools">
+    <div class="music-player">
+        <h4>🎵 Focus Music</h4>
+        <audio id="music" controls>
+            <source src="https://cdn.pixabay.com/audio/2022/07/26/audio_c6b6fef2b3.mp3" type="audio/mp3">
+            Your browser does not support the audio element.
+        </audio>
+    </div>
+
+    <div class="pomodoro">
+        <h4>⏰ Pomodoro Timer</h4>
+        <div id="timer">25:00</div>
+        <div class="pomodoro-buttons">
+            <button id="start">Start</button>
+            <button id="pause">Pause</button>
+            <button id="reset">Reset</button>
+        </div>
+    </div>
+    </section>
 </section>
     <footer>
+        <button id="backToCover">⬅️ Back to Cover</button>
         <p>Designed with purpose 🌿 Victoria’s Daily Flow</p>
     </footer>
 <script src="js files/script.js"></script>
